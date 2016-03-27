@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c284a9c122da36c99a8b6597bdce7aa6",
-    "content-hash": "8b1485987e7c5949da82435d403e52e8",
+    "hash": "7cf578686f2e90e4d4539912289fbeda",
+    "content-hash": "c0c7abf7043cd29a3a3d9158dad45497",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -308,16 +308,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.26",
+            "version": "dev-add-associate-with-to-model",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "b73ac62506c5c2bd49d87fcb1089f7759431e173"
+                "url": "https://github.com/colindecarlo/framework.git",
+                "reference": "5c0831a91e525a3732939b11601ea503e3648121"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b73ac62506c5c2bd49d87fcb1089f7759431e173",
-                "reference": "b73ac62506c5c2bd49d87fcb1089f7759431e173",
+                "url": "https://api.github.com/repos/colindecarlo/framework/zipball/5c0831a91e525a3732939b11601ea503e3648121",
+                "reference": "5c0831a91e525a3732939b11601ea503e3648121",
                 "shasum": ""
             },
             "require": {
@@ -416,7 +416,6 @@
                     "Illuminate\\": "src/Illuminate/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -432,7 +431,11 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-03-25 17:12:52"
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+            "time": "2016-03-27 21:21:08"
         },
         {
             "name": "league/flysystem",
@@ -3006,7 +3009,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "laravel/framework": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
