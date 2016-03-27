@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use DB;
 
 class Recommendation extends Model
 {
@@ -29,7 +28,7 @@ class Recommendation extends Model
 
     public function accept()
     {
-        DB::transaction(function () {
+        $this->getConnection()->transaction(function () {
             $this->accepted = true;
             $this->save();
 
