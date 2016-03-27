@@ -32,7 +32,10 @@ class Recommendation extends Model
             $this->accepted = true;
             $this->save();
 
-            $subscription = (new Subscription)->user()->associate($this->to)->blog()->associate($this->blog);
+            $subscription = (new Subscription)->associateWith([
+                'user' => $this->to,
+                'blog' => $this->blog,
+            ]);
             $this->subscription()->save($subscription);
         });
     }

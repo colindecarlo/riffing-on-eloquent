@@ -36,7 +36,10 @@ class User extends Authenticatable
 
     public function recommend($blog, $toUser)
     {
-        $recommendation = (new Recommendation)->to()->associate($toUser)->blog()->associate($blog);
+        $recommendation = (new Recommendation)->associateWith([
+            'to' => $toUser,
+            'blog' => $blog,
+        ]);
         return $this->sentRecommendations()->save($recommendation);
     }
 }
