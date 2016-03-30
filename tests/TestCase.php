@@ -2,6 +2,8 @@
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
+    use Asserts;
+    
     /**
      * The base URL to use while testing the application.
      *

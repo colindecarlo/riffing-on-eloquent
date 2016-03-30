@@ -16,13 +16,15 @@ class RecommendationInteractionsTest extends TestCase
         $this->john = factory(App\User::class)->create();
         $this->blog = factory(App\Blog::class)->create();
     }
+
     public function test_that_jane_can_recommend_a_blog_to_john()
     {
         $recommendation = $this->jane->recommend($this->blog, $this->john);
-        $this->assertTrue($recommendation->exists);
-        $this->assertEquals($recommendation->by->id, $this->jane->id);
-        $this->assertEquals($recommendation->to->id, $this->john->id);
-        $this->assertEquals($recommendation->blog->id, $this->blog->id);
+        $this->assertModelExists($recommendation);
+        $this->assertModelEquals(
+            ['by_id' => $this->john->id, 'to_id' => $this->john->id, 'blog_id' => $this->blog->id],
+            $recommendation
+        );
     }
 
     public function test_that_john_can_accept_a_recommendation()
